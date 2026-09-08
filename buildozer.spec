@@ -5,7 +5,7 @@
 [app]
 # 应用名（显示在桌面）
 title = 笨鸟先飞
-
+source.dir = .
 # 包名（必须全英文小写，dot 分隔；最终包名 = package.domain.package.name）
 package.name = sillybird
 package.domain = com.workbuddy
@@ -15,7 +15,7 @@ source.filename = main.py
 source.main = main.py
 
 # 打包时包含的文件类型 + 排除的垃圾（cache 是下载/合成的运行时产物）
-source.include_exts = py,png,jpg,jpeg,wav,ttf,otf
+source.include_exts = py,png,jpg,kv,atlas,json,wav,mp3
 source.exclude_patterns = cache/*,.git/*,.github/*,tests/*,_regress.py,download_packs.py,make_shortcut.py,launch.bat,start.bat,icon.ico,*.lnk,preview_*.png,*.md,__pycache__/*,*.pyc
 
 # 版本
