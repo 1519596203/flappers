@@ -23,9 +23,11 @@ version = 1.0
 version.code = 1
 
 # 关键依赖：python3 + pygame（p4a 走 SDL2 bootstrap）
-# python3 不指定版本，让 p4a 自动跟 hostpython3 保持一致（p4a 1.5+ 强制要求）
-# pygame 2.1.3+ 才稳定支持 Android；kivy 是 p4a SDL2 bootstrap 的强制依赖
-requirements = python3, pygame==2.5.2, kivy==2.3.0
+# ⚠️ hostpython3 和 python3 必须版本一致且都要写（p4a 1.5+ 强制校验），
+#    且必须锁 3.11.x —— p4a master 默认会拉 Python 3.14，而 3.13+ 移除了
+#    _PyArg_NoKeywords 等旧 C API，kivy 2.3.0 的 C 扩展会编译失败。
+# pygame 2.1.3+ 支持 Android；kivy 是 p4a SDL2 bootstrap 的强制依赖。
+requirements = hostpython3==3.11.9, python3==3.11.9, pygame==2.5.2, kivy==2.3.0
 
 # 屏幕方向（全屏竖屏，跟原版 480x720 比例一致）
 orientation = portrait
